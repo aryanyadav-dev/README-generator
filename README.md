@@ -1,6 +1,7 @@
 # README Generator
 
-![Screenshot](Screenshot 2024-09-24 at 10.36.08 PM.png)
+![Screenshot](<img width="1468" alt="Screenshot 2024-09-24" src="https://github.com/user-attachments/assets/2eb1ac55-e817-4ab3-ad16-919300df328f">)
+
 
 ## Overview
 
