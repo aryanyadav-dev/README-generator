@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body, html, #root {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background {
+  height: 100vh;
+  background: radial-gradient(ellipse at top, #1c1c2b, transparent), /* Top glow */
+              radial-gradient(ellipse at bottom, #000000, transparent), /* Bottom glow */
+              radial-gradient(circle at 30% 30%, rgba(92, 76, 121, 0.6), transparent 80%), /* Left purple light spot */
+              radial-gradient(circle at 70% 60%, rgba(63, 94, 251, 0.6), transparent 80%), /* Right blue light spot */
+              radial-gradient(circle at 30% 60%, rgba(63, 94, 251, 0.4), transparent 80%); /* Left blue light spot */ 
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  position: relative;
+}
+
+.search-container {
+  text-align: center;
+  position: relative;
+  top: -80px; /* Moves the container above the center */
+}
+
+h1 {
+  font-size: 2.5rem;
   color: white;
+  font-weight: 600;
 }
 
-.App-link {
-  color: #61dafb;
+h1 span {
+  color: #6366F1; /* Github blue/purple color */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-box {
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 400px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #6366F1; /* Purple button */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4F46E5; /* Darker purple on hover */
+}
+
+/* Subtle glowing effect */
+.background::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0));
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
